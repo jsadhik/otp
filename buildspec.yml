@@ -9,8 +9,8 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-      - mvn clean compile test
       - cd otpslara
+      - mvn clean compile test
   build:
     commands:
       - mvn package
