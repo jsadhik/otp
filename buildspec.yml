@@ -10,6 +10,7 @@ phases:
   pre_build:
     commands:
       - mvn clean compile test
+      - cd otpslara
   build:
     commands:
       - mvn package
