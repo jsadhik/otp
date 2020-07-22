@@ -1,0 +1,10 @@
+ClearCase CopyAreaDB|4
+vobs\apps_a2l\otpslara
+2
+6
+c:construction|2|0|0|0|c3a84a8285e411ea802d0002ce9ee74c|0
+6:domain|2|0|0|0|9032339682b711ea80080002ce9ee74c|0
+c:otpslara-ear|2|0|0|0|9f42d9b482ff11ea80370002ce9ee74c|0
+6:deploy|2|0|0|0|7bb2336a82b711ea80080002ce9ee74c|0
+f:otpslara-parent|2|0|0|0|9cb2d99c82ff11ea80370002ce9ee74c|0
+8:otpslara|2|0|0|0|9a82d98882ff11ea80370002ce9ee74c|0

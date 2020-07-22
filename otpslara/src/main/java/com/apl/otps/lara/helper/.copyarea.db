@@ -1,0 +1,9 @@
+ClearCase CopyAreaDB|4
+vobs\apps_a2l\otpslara\otpslara\src\main\java\com\apl\otps\lara\helper
+2
+5
+15:RowMapperFactory.java|1|171ab581835|24e|66eec660|ffa2dad882ff11ea80370002ce9ee74c|0
+10:QueryHelper.java|1|171ab581a0c|538|4bb6c6fd|0042dae8830011ea80370002ce9ee74c|0
+17:MarshallingFactory.java|1|171ab5817f2|37c|24433037|fe42dab882ff11ea80370002ce9ee74c|0
+10:EmailSender.java|1|171ab5817de|813|82619348|0c35034a830011ea80340002ce9ee74c|0
+f:Validators.java|1|171ab581879|405|f94b50c8|fef2dac882ff11ea80370002ce9ee74c|0

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+           
+		<context:annotation-config />
+		<context:component-scan base-package="com.apl.otps.lara*" />
+		<!-- DataSource configuration for otps Database -->
+		<bean id="otpsDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+			<property name="url" value="jdbc:oracle:thin:@172.17.68.21:1525:RVCMINT1" />
+			<property name="username" value="APL_OTPS" />
+			<property name="password" value="Bvnjfri$8" />
+		</bean>
+		<!-- DataSource Configuration for LARA Mirror -->
+        <bean id="laraDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+            <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="url" value="jdbc:oracle:thin:@10.0.165.95:1521/Query"/>
+           <property name="username" value="SCE_VISU" />
+			<property name="password" value="sce_visu" />
+        </bean>
+
+</beans>

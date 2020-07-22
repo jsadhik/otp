@@ -1,0 +1,7 @@
+ClearCase CopyAreaDB|4
+vobs\apps_a2l\otpslara\otpslara\src\main\webapp\WEB-INF
+2
+3
+f:otpslara-DB.xml|1|171ab581909|807|eb7fa675|0585030a830011ea80340002ce9ee74c|0
+16:applicationContext.xml|1|171ab5818e2|84e|2612b3c9|b7288590854711ea80140002ce9ee74c|0
+7:web.xml|1|171ab5818f3|266|4439d185|08c5031a830011ea80340002ce9ee74c|0

@@ -1,0 +1,41 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:task="http://www.springframework.org/schema/task"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context/ http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util/ http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+ 
+     <task:annotation-driven />
+     <bean id="batchProcessor" class="com.apl.otps.lara.batch.BatchProcessor">
+    
+     </bean>
+     <task:scheduler id="otpsLaraBatchSchedular" pool-size="10" />
+	 <task:scheduled-tasks scheduler="otpsLaraBatchSchedular">
+		 <!--  <task:scheduled ref="batchProcessor" method="startBatchProcess" fixed-delay="300000"  />
+		  <task:scheduled ref="batchProcessor" method="regularBatchProcess" cron="0 0 6 * * ? *"  /> 
+		  
+		   <task:scheduled ref="batchProcessor" method="regularBatchProcess" fixed-delay="60000"  />-->
+	  </task:scheduled-tasks>
+	  
+	  <!-- Email Configurations -->
+	  
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="username" value="youremail" />
+        <property name="password" value="yourpassword" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+	  
+    <import resource="otpslara-DB.xml"/>
+</beans>

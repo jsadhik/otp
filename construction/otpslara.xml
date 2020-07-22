@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================== -->
+<!--                                                                 -->
+<!--   Product build file                                            -->
+<!--                                                                 -->
+<!-- =============================================================== -->
+<project name="otpslara" default="prepare">
+
+	<property file="../construction/otpslarabatch_build.properties" />
+	
+	<!-- ********************************************************  -->
+	<!--                                                           -->
+	<!-- Build the sub projects                                    -->
+	<!--                                                           -->
+	<!-- ********************************************************  -->
+	<target name="prepare" depends="init">
+
+		<!-- Create build directories as needed -->
+		<mkdir dir="${main.root.dir}" />
+		<mkdir dir="${main.shadow.dir}" />
+		<mkdir dir="${shadow.docs.dir}" />
+		<mkdir dir="${shadow.was.dir}" />
+		<mkdir dir="${shadow.actuate.dir}" />
+		<mkdir dir="${shadow.product.dir}" />
+		<mkdir dir="${main.build.dir}" />
+		<antcall target="build" />
+
+	</target>
+
+	<target name="init">
+
+		<echo>Basedir = ${basedir}</echo>
+
+		<!-- Include any init tasks specific to the application -->
+
+	</target>
+
+	<target name="buildall" depends="init">
+		<antcall target="batch"/>
+	</target>
+	<target name="batch" depends="init" if="isBatch">
+		<antcall target="batchmavenpackage"/>  
+	</target>
+	  
+
+	<target name="batchmavenpackage" depends="init" if="isMavenBuild">
+		
+		<echo>Building ${product_name} Using Maven Package</echo>
+
+		<!-- ================================================= -->
+		<!-- call maven package -->
+		
+		<echo>${product_name} :: otpslara :: batch :: Maven packaging</echo>
+		<exec dir="${main.vob.dir}/otpslara-parent/" executable="sh" failonerror="true">
+					<arg line="-c 'mvn clean package -s /home/delivery/maven/settings.xml'" />
+		</exec>
+		
+		<!-- Place the ear in the product build framework pick location-->
+		<copy todir="${shadow.was.dir}" overwrite="true" preservelastmodified="true">
+					<fileset dir="${main.vob.dir}/otpslara-ear/target" >
+					   <include name="otpslara.ear" />
+					</fileset>
+		</copy>
+	</target>
+	
+	
+
+	<!-- Perform remaining cleanup tasks not done by sub-project tasks -->
+	<target name="cleanup">
+		<echo>Cleaning ${product_name}</echo>
+		<delete dir="${main.build.dir}" />
+	</target>
+
+	<!-- Call all the targets from here         -->
+	<target name="build" depends="init,buildall,cleanup">
+		<echo>Starting build for ${product_name}</echo>
+	</target>
+
+</project>
+ 
