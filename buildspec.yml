@@ -15,6 +15,7 @@ phases:
     commands:
       - cd ../otpslara-ear
       - mvn clean compile test package
+      - ls -ltr /target/
   post_build:
     commands:
       #- echo "Build Succesfull."
