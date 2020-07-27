@@ -9,8 +9,9 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-      - cd otpslara-ear
+      - cd otpslara
       - mvn clean compile test
+      - locate war
       - pwd
       - ls -ltr target/maven-status/
       - ls -ltr target/generated-sources
