@@ -13,8 +13,8 @@ phases:
       - mvn clean compile test
   build:
     commands:
-      - cd otpslara-ear
-      - mvn mvn clean package
+      - cd ../otpslara-ear
+      - mvn clean compile test package
   post_build:
     commands:
       #- echo "Build Succesfull."
