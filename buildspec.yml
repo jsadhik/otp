@@ -12,7 +12,9 @@ phases:
       - cd otpslara
       - mvn clean compile test
       - pwd
-      - ls -ltr target/
+      - ls -ltr target/maven-status/
+      - ls -ltr target/generated-sources
+      - ls -ltr target/classes
   build:
     commands:
       - cd ../otpslara-ear
