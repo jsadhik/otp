@@ -11,7 +11,8 @@ phases:
     commands:
       - cd otpslara
       - mvn clean compile test
-      - ls -ltr /target/
+      - pwd
+      - ls -ltr target/
   build:
     commands:
       - cd ../otpslara-ear
