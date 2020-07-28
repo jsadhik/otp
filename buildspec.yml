@@ -19,7 +19,7 @@ phases:
     commands:
       #- mvn package
       - cd otpslara-parent
-      - mvn clean compile package
+      - mvn clean compile package -X
   post_build:
     commands:
       #- echo "Build Succesfull."
