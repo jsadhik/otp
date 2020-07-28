@@ -7,19 +7,19 @@ phases:
     commands:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
-  pre_build:
-    commands:
-      - cd otpslara
-      - mvn clean compile test
-      - pwd
-      - ls -ltr target/maven-status/
-      - ls -ltr target/generated-sources
-      - ls -ltr target/classes
+  #pre_build:
+  #  commands:
+  #    - cd otpslara
+  #    - mvn clean compile test
+  #    - pwd
+  #    - ls -ltr target/maven-status/
+  #    - ls -ltr target/generated-sources
+  #    - ls -ltr target/classes
   build:
     commands:
-      - mvn package
-      #- cd ../otpslara-ear
-      #- mvn clean compile test package
+      #- mvn package
+      - cd otpslara-parent
+      - mvn clean compile package
   post_build:
     commands:
       #- echo "Build Succesfull."
