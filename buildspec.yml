@@ -7,8 +7,9 @@ phases:
     commands:
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
-  #pre_build:
-  #  commands:
+  pre_build:
+    commands:
+       - ls -la /root/.m2/repository/com/apl/otps/lara/otpslara
   #    - cd otpslara
   #    - mvn clean compile test
   #    - pwd
