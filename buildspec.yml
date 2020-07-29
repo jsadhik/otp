@@ -9,7 +9,7 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-       - ls -la /root/.m2/repository/
+       #- ls -la /root/.m2/repository/
        - ls -ltr otpslara-parent/
   #    - cd otpslara
   #    - mvn clean compile test
