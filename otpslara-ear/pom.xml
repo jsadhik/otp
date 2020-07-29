@@ -15,8 +15,8 @@
 			<artifactId>otpslara</artifactId>
 			<version>0.0.1</version>
 			<type>war</type>
-			<scope>system</scope>
-			<systemPath>${basedir}/target/otpslara.war</systemPath>
+			<!--<scope>system</scope>
+			<systemPath>${basedir}/target/otpslara.war</systemPath>-->
 		</dependency>
 	</dependencies>
 	<build>
