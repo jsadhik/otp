@@ -38,5 +38,5 @@ artifacts:
     - 'appspec.yml'
     - 'template.yml'
     - 'scripts/*'
-    - 'target/ROOT.war'
+    - 'otpslara-ear/target/otpslara.ear'
     - 'template-configuration.json'
