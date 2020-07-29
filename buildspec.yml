@@ -22,6 +22,9 @@ phases:
       #- mvn package
       - cd otpslara-parent
       - mvn clean install compile package -X
+      - ls -ltr 
+      - ls -ltr ../
+      - ls -ltr ../otpslara-ear/
   post_build:
     commands:
       - cd ../
